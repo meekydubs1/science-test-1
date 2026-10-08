@@ -289,10 +289,12 @@
     if (!ids.length) { S.lessons[l.id] = today(); save(); return breakScreen(null); }
     startBlock({ kind: 'lesson', lesson: l.id, title: l.title, ids: orderForLearning(ids) });
   }
-  // Keep recall questions early and calculations spread out, so a lesson builds up.
+  // A lesson builds up from easy to hard: recognise (multiple choice), then recall short answers,
+  // then full mark-scheme answers. Calculations are spread through. Order within each step is kept.
+  const TIER = { mcq: 0, qa: 1, pts: 2 };
   function orderForLearning(ids) {
     const calc = ids.filter((id) => CARD[id].t === 'calc');
-    const rest = ids.filter((id) => CARD[id].t !== 'calc');
+    const rest = ids.filter((id) => CARD[id].t !== 'calc').sort((a, b) => TIER[CARD[a].t] - TIER[CARD[b].t]);
     const out = rest.slice();
     calc.forEach((id, i) => out.splice(Math.min(out.length, Math.floor(((i + 1) * out.length) / (calc.length + 1)) + i), 0, id));
     return out;
@@ -407,7 +409,10 @@
   // first answer in a block decides the schedule; later tries only clear the card from today's queue
   function record(ok) {
     const id = run.queue[0];
-    if (run.tried.has(id)) return;
+    if (run.tried.has(id)) {
+      if (ok && run.kind !== 'test' && S.cards[id]) { S.cards[id].right++; save(); }
+      return;
+    }
     run.tried.add(id);
     if (ok) run.firstRight++; else { run.firstWrong++; run.missed.push(id); }
     if (run.kind !== 'test') grade(id, ok);
@@ -417,7 +422,9 @@
   function advance(ok) {
     const id = run.queue.shift();
     if (!ok && run.kind !== 'test') {
-      run.queue.splice(Math.min(3, run.queue.length), 0, id);
+      let pos = Math.min(3, run.queue.length), fresh = 0;
+      for (let i = 0; i < run.queue.length && fresh < 3; i++) if (!run.tried.has(run.queue[i])) { fresh++; pos = Math.max(pos, i + 1); }
+      run.queue.splice(pos, 0, id);
       toast('No problem. This one comes back in a moment.');
     }
     showCard();
