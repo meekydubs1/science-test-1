@@ -80,7 +80,7 @@
         const M = pick([20, 40, 50, 100, 200, 250, 400, 500, 1000]);
         const I = A * M;
         if (I < 4 || I > 160 || Math.abs(I * 10 - Math.round(I * 10)) > 1e-9) continue;
-        return { q: `A cell is <b>${fmt(A)} mm</b> wide. In a drawing it is <b>${fmt(I)} mm</b> wide. Calculate the <b>magnification</b> of the drawing.`, ans: M, unit: '×', pre: '×',
+        return { q: `A specimen is <b>${fmt(A)} mm</b> wide. In a drawing it is <b>${fmt(I)} mm</b> wide. Calculate the <b>magnification</b> of the drawing.`, ans: M, unit: '×', pre: '×',
           steps: `M = image ÷ actual<br>= ${fmt(I)} ÷ ${fmt(A)}<br>= <b>×${fmt(M)}</b>`, kind: 'M', I, A };
       }
     },
@@ -115,7 +115,7 @@
         const raw = D / L;
         if (Math.abs(raw * 10 - Math.round(raw * 10)) < 0.05) continue;
         return { q: `A leaf is <b>${L} mm</b> long in a photograph. A student draws it <b>${D} mm</b> long. Calculate the magnification of the drawing. Give your answer to <b>two significant figures</b>.`, ans: sf2(raw), unit: '×', pre: '×', exact: true,
-          steps: `M = drawing ÷ photo = ${D} ÷ ${L} = ${raw.toFixed(3)}...<br>Two significant figures: <b>×${sf2(raw)}</b>` };
+          steps: `M = drawing ÷ photo = ${D} ÷ ${L} = ${raw.toFixed(3)}...<br>Two significant figures: <b>×${raw.toPrecision(2)}</b>` };
       }
     },
     mm2um() {
@@ -137,7 +137,7 @@
         const Imm = (A * M) / 1000;
         if (Imm < 5 || Imm > 150 || Math.abs(Imm - Math.round(Imm)) > 1e-9) continue;
         return { q: `The actual size of ${thing} is <b>${fmt(A)} µm</b>. In the picture it measures <b>${fmt(Imm)} mm</b>. Calculate the <b>magnification</b>.`, ans: M, unit: '×', pre: '×',
-          steps: `1. Image in mm: ${fmt(Imm)} mm<br>2. Convert to µm: ${fmt(Imm)} × 1000 = ${fmt(Imm * 1000)} µm<br>3. M = ${fmt(Imm * 1000)} ÷ ${fmt(A)} = <b>×${fmt(M)}</b>`, kind: 'M' };
+          steps: `1. Image in mm: ${fmt(Imm)} mm<br>2. Convert to µm: ${fmt(Imm)} × 1000 = ${fmt(Imm * 1000)} µm<br>3. M = ${fmt(Imm * 1000)} ÷ ${fmt(A)} = <b>×${fmt(M)}</b>`, kind: 'M', I: Imm * 1000, A };
       }
     },
     actualUm() {
@@ -175,7 +175,7 @@
 
   function parseNum(raw) {
     let s = String(raw).trim().replace(/[×x%µumcm\s]/gi, '').replace(/[−–]/g, '-');
-    if (/^-?\d{1,3}(,\d{3})+(\.\d+)?$/.test(s)) s = s.replace(/,/g, '');
+    if (/^-?[1-9]\d{0,2}(,\d{3})+(\.\d+)?$/.test(s)) s = s.replace(/,/g, '');
     else s = s.replace(',', '.');
     if (s === '' || isNaN(Number(s))) return null;
     return Number(s);
@@ -364,7 +364,7 @@
     draw();
   }
   function showMcq(c, top) {
-    if (!run.opts || run.opts.id !== c.id) run.opts = { id: c.id, list: c.keep ? c.o.map((t, i) => ({ t, ok: i === 0 })) : shuffle(c.o.map((t, i) => ({ t, ok: i === 0 }))) };
+    if (!run.opts || run.opts.id !== c.id) run.opts = { id: c.id, list: c.keep ? c.o.map((t, i) => ({ t, ok: i === 0 })).sort((a, b) => a.t.localeCompare(b.t)) : shuffle(c.o.map((t, i) => ({ t, ok: i === 0 }))) };
     const list = run.opts.list;
     let chosen = -1;
     const draw = () => {

@@ -50,6 +50,12 @@ const LESSONS = [
 <li><b>Respiration or excretion?</b> Respiration = releasing energy in cells. Excretion = getting rid of waste. Breathing out extra carbon dioxide is <b>excretion</b>, because carbon dioxide is a waste product of respiration.</li>
 <li><b>Growth must be permanent and in dry mass.</b> A sponge soaking up water gets bigger but has not grown.</li>
 </ol>
+<p><b>Your notebook versions that would lose marks:</b></p>
+<ul>
+<li>Sensitivity "detects its environment": add <b>and responds to changes</b>.</li>
+<li>Reproduction "making copies of themselves": say <b>make more of the same kind of organism</b>.</li>
+<li>Nutrition "taking in substances to make energy": say <b>materials for energy, growth and development</b>.</li>
+</ul>
 <p>Also: breathing (moving air in and out) is <b>not</b> respiration. Respiration is the chemical reaction inside cells.</p>`,
       },
     ],
@@ -63,11 +69,11 @@ const LESSONS = [
       { t: 'qa', q: 'Define <b>reproduction</b>.', a: 'The processes that make <b>more of the same kind of organism</b>.' },
       { t: 'qa', q: 'Define <b>movement</b>.', a: 'An action by an organism or part of an organism causing a <b>change of position or place</b>.' },
       { t: 'mcq', q: 'The air you breathe out contains more carbon dioxide than the air you breathe in. Which characteristic is this?', o: ['Excretion', 'Respiration', 'Nutrition', 'Movement'], why: 'Carbon dioxide is a waste product of respiration. Getting rid of it is excretion.' },
-      { t: 'mcq', q: 'A <i>Mimosa</i> plant folds up its leaves when it is touched.', o: ['Sensitivity', 'Movement', 'Growth', 'Respiration'], why: 'It detects the touch and responds to it.' },
+      { t: 'mcq', q: 'A <i>Mimosa</i> plant folds up its leaves when it is touched.', o: ['Sensitivity', 'Excretion', 'Growth', 'Respiration'], why: 'It detects the touch and responds to it.' },
       { t: 'mcq', q: 'A bacterium divides into two every 20 minutes.', o: ['Reproduction', 'Growth', 'Excretion', 'Movement'], why: 'One becomes two: more of the same kind of organism.' },
       { t: 'mcq', q: 'During its first year a baby may triple its birth weight.', o: ['Growth', 'Nutrition', 'Reproduction', 'Respiration'], why: 'A permanent increase in size and dry mass.' },
       { t: 'mcq', q: 'Green leaves use chlorophyll to make glucose and starch.', o: ['Nutrition', 'Respiration', 'Excretion', 'Sensitivity'], why: 'Plants make their own food: this is how they take in materials for energy and growth.' },
-      { t: 'mcq', q: 'Your heart beats faster when you get a shock.', o: ['Sensitivity', 'Movement', 'Respiration', 'Excretion'], why: 'Your body detects a change and responds to it.' },
+      { t: 'mcq', q: 'Your heart beats faster when you get a shock.', o: ['Sensitivity', 'Growth', 'Respiration', 'Excretion'], why: 'Your body detects a change and responds to it.' },
       { t: 'mcq', q: 'Humans produce urine containing waste products and water the body does not need.', o: ['Excretion', 'Nutrition', 'Respiration', 'Reproduction'], why: 'Removal of waste and of substances in excess of requirements.' },
       { t: 'mcq', q: 'At night a plant gives out carbon dioxide.', o: ['Respiration', 'Nutrition', 'Sensitivity', 'Growth'], why: 'At night there is no photosynthesis, so the carbon dioxide released comes from respiration in the cells.' },
       { t: 'mcq', q: 'Which of these is an example of <b>growth</b>?', o: ['A tree adds a new ring of wood every year', 'A dry sponge soaks up water and gets bigger', 'A balloon is blown up', 'A plant wilts on a hot day'], why: 'Growth is a permanent increase in size and dry mass. Water soaking in is not growth.' },
@@ -149,8 +155,8 @@ const LESSONS = [
         h: 'The bacterial cell',
         html: `${D.render('bacteria')}
 <ul>
-<li><b>No nucleus.</b> Its DNA is one loop, the <b>circular DNA</b>, lying free in the cytoplasm.</li>
-<li><b>Plasmids</b>: extra small rings of DNA.</li>
+<li><b>No nucleus.</b> Its DNA is one loop, the <b>circular DNA</b>, lying free in the cytoplasm. It carries the genes that <b>control the cell's activities</b>.</li>
+<li><b>Plasmids</b>: extra small rings of DNA carrying <b>extra genes</b>, for example genes for <b>antibiotic resistance</b>.</li>
 <li><b>Cell wall</b> is <b>not</b> made of cellulose.</li>
 <li>Some have a <b>flagellum</b> (a tail to move) and a <b>slime capsule</b> (protection).</li>
 <li>No mitochondria, no chloroplasts. Bacteria are tiny: about 1 µm long.</li>
@@ -167,7 +173,7 @@ const LESSONS = [
       { t: 'mcq', q: 'Which structure is found in <b>bacterial</b> cells but <b>not</b> in plant or animal cells?', o: ['Plasmid', 'Ribosome', 'Cell membrane', 'Mitochondrion'], why: 'Plasmids are small extra rings of DNA found only in bacteria (in this course).' },
       { t: 'mcq', q: 'Which features are found in <b>all</b> plant cells?', o: ['Cell wall: yes. Chloroplasts: no, not all.', 'Cell wall: yes. Chloroplasts: yes, all.', 'Cell wall: no. Chloroplasts: yes, all.', 'Neither'], keep: true, why: 'Every plant cell has a cell wall, but root cells have no chloroplasts (no light underground).' },
       { t: 'mcq', q: 'Which row shows structures present in <b>both</b> root hair cells and palisade mesophyll cells?', o: ['Cell wall, cytoplasm, vacuole', 'Cell wall, chloroplasts, cytoplasm, vacuole', 'Chloroplasts and cytoplasm only', 'Cell wall and chloroplasts only'], why: 'Root hair cells have no chloroplasts. Both have a cell wall, cytoplasm and a vacuole.' },
-      { t: 'mcq', q: 'What is a bacterial cell wall <b>not</b> made of?', o: ['Cellulose', 'Anything: bacteria have no cell wall', 'Protein', 'DNA'], why: 'Bacteria do have a cell wall, but it is not made of cellulose (plant cell walls are).' },
+      { t: 'mcq', q: 'How is a bacterial cell wall different from a plant cell wall?', o: ['It is not made of cellulose', 'It is made of cellulose', 'Bacteria have no cell wall', 'It is inside the cell membrane'], why: 'Bacteria do have a cell wall, but unlike a plant cell wall it is not made of cellulose.' },
       { t: 'mcq', q: 'Which of these does a bacterial cell <b>not</b> have?', o: ['Nucleus', 'Ribosomes', 'Cell membrane', 'Cytoplasm'], why: 'Bacteria have no nucleus: their DNA is a loose loop in the cytoplasm.' },
       { t: 'qa', q: 'What is the job of a <b>flagellum</b> on a bacterium?', a: 'It lets the bacterium move (swim).' },
       { t: 'qa', q: 'What does the <b>slime capsule</b> do?', a: 'Protects the bacterium.' },
@@ -176,6 +182,8 @@ const LESSONS = [
       { t: 'mcq', q: 'What is this structure?', img: 'bacteria:flagellum', o: ['Flagellum', 'Cilia', 'Slime capsule', 'Cell wall'], why: 'The long tail used for moving.' },
       { t: 'mcq', q: 'What is this structure?', img: 'bacteria:cell wall', o: ['Cell wall', 'Cell membrane', 'Slime capsule', 'Cytoplasm'], why: 'The layer between the slime capsule (outside) and the cell membrane (inside).' },
       { t: 'mcq', q: 'This cell has a cell wall, ribosomes and circular DNA but <b>no nucleus</b>. What type of cell is it?', o: ['Bacterial cell', 'Plant cell', 'Animal cell', 'Red blood cell'], why: 'No nucleus plus circular DNA: a bacterium. (A red blood cell has no nucleus, but has no cell wall or DNA either.)' },
+      { t: 'qa', q: 'Describe the function of <b>plasmids</b> in bacterial cells.', a: 'Small extra rings of DNA that carry <b>extra genes</b>, for example genes for <b>antibiotic resistance</b>.' },
+      { t: 'qa', q: 'What is the function of the <b>circular DNA</b> in a bacterium?', a: 'It carries the genes that <b>control the activities of the cell</b> (it does the job the nucleus does in other cells).' },
     ],
   },
 
@@ -238,7 +246,8 @@ const LESSONS = [
 <tr><th>Tissue</th><td>a group of <b>cells with similar structures</b>, working together to perform a <b>shared function</b>. Example: muscle tissue, palisade mesophyll tissue.</td></tr>
 <tr><th>Organ</th><td>a structure made of a <b>group of tissues</b>, working together to perform <b>specific functions</b>. Example: heart, stomach, brain, <b>leaf</b>, root.</td></tr>
 <tr><th>Organ system</th><td>a <b>group of organs with related functions</b>, working together to perform body functions. Example: digestive system, circulatory system, nervous system.</td></tr>
-<tr><th>Organism</th><td>a whole living thing, made of organ systems working together. Example: a human, a sunflower.</td></tr>
+<tr><th>Cell</th><td>the basic unit of all living things. Example: a red blood cell, a root hair cell.</td></tr>
+<tr><th>Organism</th><td>an individual living thing. Large organisms are made of organ systems working together; some (like bacteria) are a single cell. Example: a human, a sunflower.</td></tr>
 </table>
 <p class="tip">Exam question: <i>Why is a leaf an organ?</i> Because it is made of <b>several different tissues</b> (for example palisade mesophyll, epidermis, xylem) <b>working together</b> to perform a function (photosynthesis).</p>`,
       },
@@ -253,6 +262,8 @@ const LESSONS = [
       { t: 'mcq', q: 'A layer of palisade mesophyll cells in a leaf is...', o: ['a tissue', 'an organ', 'an organ system', 'an organism'], why: 'Many similar cells working together = tissue.' },
       { t: 'mcq', q: 'The stomach, intestines and liver working together form...', o: ['an organ system', 'an organ', 'a tissue', 'an organism'], why: 'They are organs with related functions: the digestive system.' },
       { t: 'mcq', q: 'A single red blood cell is...', o: ['a cell', 'a tissue', 'an organ', 'an organ system'], why: 'One cell is just a cell.' },
+      { t: 'qa', q: 'What is a <b>cell</b>?', a: 'The <b>basic unit</b> of all living things. Everything alive is made of one or more cells.' },
+      { t: 'qa', q: 'What is an <b>organism</b>? Give an example.', a: 'An <b>individual living thing</b>, e.g. a human or a sunflower. Large organisms are made of organ systems working together; a bacterium is an organism made of one cell.' },
     ],
   },
 
@@ -286,7 +297,8 @@ const LESSONS = [
 <div class="formula">total magnification = eyepiece × objective</div>
 <p>Example: eyepiece ×10 and objective ×4 gives <b>×40</b>.</p>
 <p><b>Rules for a biological drawing</b> (your teacher's list):</p>
-<ul><li>use a sharp pencil</li><li>no colouring or shading</li><li>give the drawing a heading</li><li>draw the specimen in a rectangle, not a circle, and draw it large</li><li>calculate the total magnification and write it on the drawing</li></ul>`,
+<ul><li>use a sharp pencil</li><li>no colouring or shading</li><li>give the drawing a heading</li><li>draw the specimen in a rectangle, not a circle</li><li>calculate the total magnification and write it on the drawing</li></ul>
+<p>Exam papers also say: make the drawing <b>large</b>, use clear single lines, and include the inside parts.</p>`,
       },
     ],
     cards: [
@@ -302,8 +314,8 @@ const LESSONS = [
       { t: 'calc', gen: 'imageFind' },
       { t: 'calc', gen: 'totalMag' },
       { t: 'calc', gen: 'sigFig' },
-      { t: 'mcq', q: 'A student finds four worms and draws them. Which worm was <b>longest</b> in real life?<br><span class="small">A: drawing 60 mm at ×3 &nbsp; B: 70 mm at ×1 &nbsp; C: 100 mm at ×2 &nbsp; D: 120 mm at ×5</span>', o: ['B (70 mm)', 'A (20 mm)', 'C (50 mm)', 'D (24 mm)'], keep: true, why: 'Actual = image ÷ magnification: A = 20, B = 70, C = 50, D = 24 mm. B is longest.' },
-      { t: 'pts', q: 'Give <b>four</b> rules for a good biological drawing.', p: ['sharp pencil', 'no colouring or shading', 'a heading (title)', 'drawn large, in a rectangle not a circle', 'total magnification written on it'], need: 4 },
+      { t: 'mcq', q: 'A student finds four worms and draws them. Which worm was <b>longest</b> in real life?<br><span class="small">A: drawing 60 mm at ×3 &nbsp; B: 70 mm at ×1 &nbsp; C: 100 mm at ×2 &nbsp; D: 120 mm at ×5</span>', o: ['B', 'A', 'C', 'D'], keep: true, why: 'Actual = image ÷ magnification: A = 20, B = 70, C = 50, D = 24 mm. B is longest.' },
+      { t: 'pts', q: 'Give <b>four</b> rules for a good biological drawing.', p: ['sharp pencil', 'no colouring or shading', 'a heading (title)', 'drawn in a rectangle, not a circle', 'total magnification written on it', 'drawn large'], need: 4 },
       { t: 'qa', q: 'How do you work out the <b>total magnification</b> of a microscope?', a: 'Eyepiece magnification × objective lens magnification.' },
       { t: 'mcq', q: 'On which part of the microscope do you place the slide?', o: ['Stage', 'Eyepiece', 'Objective lens', 'Base'], why: 'The slide sits on the stage, above the light source.' },
       { t: 'mcq', q: 'Which part do you look through?', o: ['Eyepiece', 'Objective lens', 'Stage', 'Light source'], why: 'The eyepiece is at the top, where your eye goes.' },
@@ -388,6 +400,7 @@ const LESSONS = [
       { t: 'mcq', q: 'In a class experiment, the times for a colour to spread were 223 s at 13 °C, 106 s at 23 °C and 35 s at 71 °C. What do these show?', o: ['Higher temperature, faster diffusion', 'Higher temperature, slower diffusion', 'Temperature has no effect', 'Diffusion stops above 50 °C'], why: 'Less time = faster. Particles have more kinetic energy when hotter.' },
       { t: 'pts', q: 'Give <b>two</b> reasons why diffusion is important to living cells.', p: ['getting raw materials for respiration (oxygen, glucose)', 'removing waste products (carbon dioxide)', 'getting carbon dioxide for photosynthesis (plants)'], need: 2 },
       { t: 'qa', q: 'Is swapping oxygen and carbon dioxide in the lungs called <b>respiration</b>?', a: 'No, it is <b>gas exchange</b> (by diffusion). Respiration is the chemical reaction in cells that releases energy.' },
+      { t: 'qa', q: 'Through which part of a cell do substances like oxygen and carbon dioxide <b>diffuse in and out</b>?', a: 'The <b>cell membrane</b>.' },
     ],
   },
 
@@ -445,6 +458,8 @@ const LESSONS = [
       { t: 'pts', q: 'Name <b>three</b> things to keep the same in the potato experiment.', p: ['size (length/mass) of the potato pieces', 'volume of solution', 'time left in the solution', 'temperature'], need: 3 },
       { t: 'pts', q: 'Explain why a plant <b>wilts</b> when it does not get enough water.', p: ['water leaves the cells by osmosis', 'cells become flaccid', 'cells no longer push against each other, so the plant loses support'], need: 2 },
       { t: 'qa', q: 'How does water get into a <b>root hair cell</b>?', a: 'By <b>osmosis</b>: soil water is more dilute (higher water potential) than the cell sap.' },
+      { t: 'qa', q: 'How does water move into and out of cells, and through which structure?', a: 'By <b>osmosis</b>, through the <b>cell membrane</b> (which is partially permeable).' },
+      { t: 'pts', q: 'Your teacher listed <b>four</b> things that affect the rate of osmosis. Name them.', p: ['concentration gradient', 'permeability of the membrane', 'temperature', 'surface area'], need: 3 },
     ],
   },
 
@@ -482,7 +497,7 @@ const LESSONS = [
       { t: 'mcq', q: 'Which process moves particles <b>against</b> a concentration gradient?', o: ['Active transport', 'Diffusion', 'Osmosis', 'All three'], why: 'Only active transport goes from low to high, and it needs energy.' },
       { t: 'mcq', q: 'Which process needs <b>energy</b> from respiration?', o: ['Active transport', 'Diffusion', 'Osmosis', 'None of them'], why: 'Diffusion and osmosis are passive.' },
       { t: 'mcq', q: 'Oxygen moves from the alveoli into the blood. Which process?', o: ['Diffusion', 'Osmosis', 'Active transport', 'Excretion'], why: 'Gas moving from high to low concentration: diffusion.' },
-      { t: 'mcq', q: 'Water moves from the soil into a root hair cell. Which process?', o: ['Osmosis', 'Diffusion', 'Active transport', 'Transpiration'], why: 'Water through a partially permeable membrane: osmosis.' },
+      { t: 'mcq', q: 'Water moves from the soil into a root hair cell. Which process?', o: ['Osmosis', 'Excretion', 'Active transport', 'Transpiration'], why: 'Water through a partially permeable membrane: osmosis.' },
       { t: 'mcq', q: 'Nitrate ions move from the soil (low concentration) into a root hair cell (high concentration). Which process?', o: ['Active transport', 'Diffusion', 'Osmosis', 'Respiration'], why: 'Low to high = against the gradient = active transport.' },
       { t: 'mcq', q: 'Glucose is absorbed from the gut even when there is <b>less</b> glucose in the gut than in the blood. Which process?', o: ['Active transport', 'Diffusion', 'Osmosis', 'Excretion'], why: 'Against the gradient.' },
       { t: 'mcq', q: 'Carbon dioxide moves into a leaf through the stomata. Which process?', o: ['Diffusion', 'Active transport', 'Osmosis', 'Respiration'], why: 'Gas from high to low concentration.' },
@@ -558,7 +573,8 @@ const LESSONS = [
         h: 'Heating curves',
         html: `${D.render('heating')}
 <ul><li><b>A</b>: solid warming up</li><li><b>B</b>: flat, <b>melting</b>: solid and liquid together</li><li><b>C</b>: liquid warming up</li><li><b>D</b>: flat, <b>boiling</b>: liquid and gas together</li><li><b>E</b>: gas warming up</li></ul>
-<p class="tip">Why is it flat while melting or boiling? The energy is being used to <b>overcome the forces of attraction</b> between particles, not to raise the temperature. On a <b>cooling</b> curve the flat parts are condensing and freezing.</p>`,
+<p class="tip">Why is it flat while melting or boiling? The energy is being used to <b>overcome the forces of attraction</b> between particles, not to raise the temperature. </p>
+<p><b>Cooling curve</b> (a gas cooling down): the line goes down in steps. The <b>first flat part is condensing</b> (gas to liquid), the <b>second flat part is freezing</b> (liquid to solid). The temperature stays constant there because <b>energy is released</b> as the forces of attraction between particles form again.</p>`,
       },
     ],
     cards: [
@@ -574,6 +590,9 @@ const LESSONS = [
       { t: 'mcq', q: 'When a liquid is <b>cooled</b>, the particles...', o: ['lose kinetic energy and move more slowly', 'gain kinetic energy', 'get smaller', 'stop being attracted to each other'], why: 'Energy goes from the particles to the surroundings.' },
       { t: 'qa', q: 'Are changes of state <b>physical</b> or <b>chemical</b> changes?', a: '<b>Physical.</b> They can be reversed and the particles themselves do not change, only their arrangement, movement and energy.' },
       { t: 'mcq', q: 'Puddles dry up on a day when the temperature is 20 °C. This is...', o: ['evaporation', 'boiling', 'condensation', 'melting'], why: 'Water turns to gas at the surface, well below 100 °C.' },
+      { t: 'mcq', q: 'A gas is cooled until it becomes a solid. On the <b>cooling curve</b>, what is happening at the <b>first</b> flat section?', o: ['Condensing', 'Freezing', 'Boiling', 'Melting'], why: 'Cooling a gas: first it condenses into a liquid, then the liquid freezes.' },
+      { t: 'mcq', q: 'On the same cooling curve, what is happening at the <b>second</b> flat section?', o: ['Freezing', 'Condensing', 'Evaporating', 'Melting'], why: 'The liquid turns into a solid.' },
+      { t: 'pts', q: 'Explain why the temperature stays <b>constant</b> while a liquid is <b>freezing</b>.', p: ['energy is released (given out to the surroundings)', 'as the forces of attraction between particles form again'], need: 2 },
     ],
   },
 
@@ -713,6 +732,7 @@ const LESSONS = [
       { t: 'qa', q: 'How can you tell a substance is <b>pure</b> from its melting point?', a: 'A pure substance melts at <b>one sharp, fixed temperature</b> that matches the data value. Impure substances melt <b>lower</b> and over a <b>range</b>.' },
       { t: 'mcq', q: 'A mixture contains salt and a white powder that is insoluble in water but soluble in ethanol. How could you separate them?', o: ['Add ethanol to dissolve the powder, then filter', 'Add water and boil', 'Use a magnet', 'Use fractional distillation'], why: 'Pick a solvent that dissolves only one of them, then filter.' },
       { t: 'qa', q: 'What is the melting point and boiling point of <b>pure water</b>?', a: 'Melts at <b>0 °C</b>, boils at <b>100 °C</b>.' },
+      { t: 'mcq', q: 'A white solid melts sharply at 122 °C. Data book melting points: P 80 °C, Q 122 °C, R 135 °C. What is the solid?', o: ['Q, and it is pure', 'Q, but it is impure', 'R, and it is impure', 'P, and it is pure'], why: 'It matches Q, and a sharp melting point at exactly the data value means it is pure.' },
     ],
   },
 
@@ -728,7 +748,8 @@ const LESSONS = [
 <li>Stand the paper in a beaker of solvent. The <b>solvent level must be below the start line</b>, otherwise the spots would dissolve into the solvent in the beaker.</li>
 <li>The solvent soaks up the paper and carries the substances with it. Each substance travels a different distance.</li>
 <li>Take the paper out before the solvent reaches the top, mark the <b>solvent front</b>, and let it dry.</li></ol>
-<p>How far a substance moves depends on how well it <b>dissolves in the solvent</b> (the <b>mobile phase</b>) and its <b>attraction to the paper</b> (the <b>stationary phase</b>).</p>`,
+<p>How far a substance moves depends on how well it <b>dissolves in the solvent</b> (the <b>mobile phase</b>) and its <b>attraction to the paper</b> (the <b>stationary phase</b>).</p>
+<p class="tip">Careful: one line in your notebook plenary says "attraction to the mobile phase". It is the attraction to the <b>paper</b>, which is the <b>stationary</b> phase. The solvent is the mobile phase.</p>`,
       },
       {
         h: 'Reading a chromatogram',

@@ -66,7 +66,7 @@ const D = (() => {
         'cell wall': [215, 74, 260, 20],
         'cell membrane': [215, 168, 215, 222],
         cytoplasm: [110, 130, 20, 200],
-        'circular DNA': [175, 120, 20, 150],
+        'circular DNA': [171, 132, 165, 222],
         plasmid: [275, 110, 400, 60],
         ribosome: [250, 140, 400, 200],
         flagellum: [410, 125, 420, 165],
@@ -114,7 +114,7 @@ const D = (() => {
   function heating(labels = true) {
     const pts = '60,215 120,165 200,165 260,95 360,95 410,40';
     const L = labels
-      ? `<text x="82" y="200" class="d-label">A</text><text x="155" y="157" class="d-label">B</text><text x="222" y="140" class="d-label">C</text><text x="305" y="87" class="d-label">D</text><text x="378" y="75" class="d-label">E</text>`
+      ? `<text x="98" y="207" class="d-label">A</text><text x="155" y="157" class="d-label">B</text><text x="240" y="142" class="d-label">C</text><text x="305" y="87" class="d-label">D</text><text x="396" y="82" class="d-label">E</text>`
       : '';
     return svg('0 0 440 260',
       `<path d="M50 20 V230 H430" class="d-axis"/><text x="20" y="130" transform="rotate(-90 20 130)" text-anchor="middle" class="d-small">temperature / °C</text><text x="240" y="252" text-anchor="middle" class="d-small">time (heating)</text>` +
